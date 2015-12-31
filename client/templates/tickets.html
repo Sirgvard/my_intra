@@ -1,0 +1,33 @@
+<ng-include src="'templates/partials/navbar.html'"></ng-include>
+<ng-include src="'templates/partials/sidebar.html'"></ng-include>
+<div class="col-md-12">
+  <h2 class="sub-header">All current issues</h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Submission date</th>
+          <th>Level</th>
+          <th>Weight</th>
+          <th>Submitter</th>
+          <th>In Progress ?</th>
+          <th>Handler</th>
+          <th>Validated</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat='ticket in tickets | orderBy: weight: true'>
+          <td>{{ticket.createdAt | date : "medium"}}</td>
+          <td>{{ticket.level}}</td>
+          <td>{{ticket.weight}}</td>
+          <td>{{ticket.authorUsername}}</td>
+          <td>{{ticket.isInProgress}}</td>
+          <td>{{ticket.handlerUsername}}</td>
+          <td>{{ticket.isValidated}}</td>
+          <td><button ng-click='seeTicket(ticket._id)' class="btn btn-primary">See this ticket</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

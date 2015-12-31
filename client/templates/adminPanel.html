@@ -1,0 +1,107 @@
+<ng-include src="'templates/partials/navbar.html'"></ng-include>
+<ng-include src="'templates/partials/sidebar.html'"></ng-include>
+<div class="col-md-12 adminPanel">
+  <h1 class="page-header">Administration Dashboard</h1>
+  <div class="alert alert-danger" role="alert">You need to handle a PLATINUM TICKET !</div>
+  <h2 class="sub-header">Current Issues</h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Level</th>
+          <th>Weight</th>
+          <th>Submitter</th>
+          <th>Comments</th>
+          <th>In progress ?</th>
+          <th>Handler</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat='ticket in tickets | orderBy: weight: true'>
+          <td>{{ticket.createdAt | date : "medium"}}</td>
+          <td>{{ticket.level}}</td>
+          <td>{{ticket.weight}}</td>
+          <td>{{ticket.authorUsername}}</td>
+          <td>{{ticket.comments.length}}</td>
+          <td>{{ticket.isInProgress}}</td>
+          <td>{{ticket.handlerUsername}}</td>
+          <td><button ng-click='seeTicket(ticket._id)' class="btn btn-primary">See this ticket</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <button ng-click='seeTickets()' type="submit" class="btn btn-primary">View all tickets</button>
+  </div>
+
+  <h2 class="sub-header">Users</h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Profile Picture</th>
+          <th>Username</th>
+          <th>Name</th>
+          <th>Mail</th>
+          <th>City</th>
+          <th>Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat='user in allUsers | limitTo:10'>
+          <td><img src="{{user.photo}}" class="img-responsive img-circle" alt="Generic placeholder thumbnail"></td>
+          <td>{{user.username}}</td>
+          <td>{{user.firstName}} {{user.lastName}}</td>
+          <td>{{user.mail}}</td>
+          <td>{{user.city}}</td>
+          <td>{{user.country}}</td>
+          <td><button ng-click='seeUser(user._id)' class="btn btn-primary">See this User</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <button ng-click='seeUsers()' type="submit" class="btn btn-primary">View all Users</button>
+  </div>
+
+  <h2 class="sub-header">Submit an issue - All of the parameters are requiered !</h2>
+  <form>
+    <fieldset class="form-group">
+      <p>Title</p>
+      <input type="text" class="form-control" placeholder="Title" ng-model='ticketForm.title'>
+    </fieldset>
+    <div class="issueParameters">
+      <p>Options</p>
+      <div class="col-md-3">
+        <select ng-options="category as category.name for category in categories1 " ng-model="ticketForm.type1" ng-change="update1()">
+          <option value="" disabled selected style="display: none;"> First Option </option>
+        </select>
+          {{category1.id}} {{category1.name}}
+      </div>
+      <div class="col-md-3">
+        <select ng-options="category as category.name for category in categories2 " ng-model="ticketForm.type2" ng-change="update2()">
+          <option value="" disabled selected style="display: none;"> Second Option </option>
+        </select>
+          {{category2.id}} {{category2.name}}
+      </div>
+      <div class="col-md-3">
+        <select ng-options="category as category.name for category in categories3 " ng-model="ticketForm.type3">
+          <option value="" disabled selected style="display: none;"> Third Option </option>
+        </select>
+          {{category3.id}} {{category3.name}}
+      </div>
+      <div class="col-md-3">
+        <select ng-options="category as category.name for category in categories4 " ng-model="ticketForm.impact">
+          <option value="" disabled selected style="display: none;"> Users Inpacted </option>
+        </select>
+      </div>
+    </div>
+    <fieldset class="form-group">
+      <p for="exampleTextarea">Location</p>
+      <textarea class="form-control" rows="1" placeholder="Please add the city and the room of this issue !" ng-model='ticketForm.room'></textarea>
+    </fieldset>
+    <fieldset class="form-group">
+      <p for="exampleTextarea">Short description</p>
+      <textarea class="form-control" rows="2" placeholder="Short Description" ng-model='ticketForm.description'></textarea>
+    </fieldset>
+    <button type="submit" class="btn btn-primary" ng-click='addTicket()'>Submit</button>
+  </form>
+</div>

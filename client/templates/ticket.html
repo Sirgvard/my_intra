@@ -1,0 +1,49 @@
+<ng-include src="'templates/partials/navbar.html'"></ng-include>
+<ng-include src="'templates/partials/sidebar.html'"></ng-include>
+<div class="UniqueTicket">
+  <h1 class="sub-header">Basic Data</h1>
+  <h2>Ticket : {{ticket._id}}</h2>
+  <h4>Submitted : {{ticket.createdAt | date : "medium"}}</h4>
+  <h4 ng-click='seeAuthor(ticket.author)' style="text-decoration: underline" ng-show='user.admin'>By : {{ticket.authorUsername}}</h4>
+  <h1 class="sub-header">Informations</h1>
+  <h4>Level : {{ticket.level}}</h4>
+  <h4>Weight : {{ticket.weight}}</h4>
+  <h4>Type 1: {{ticket.type1}}</h4>
+  <h4>Type 2: {{ticket.type2}}</h4>
+  <h4>Type 3: {{ticket.type3}}</h4>
+  <h4>Impact : {{ticket.impact}}</h4>
+  <h1 class="sub-header">User's description of this issue</h1>
+  <h4>Title : {{ticket.title}}</h4>
+  <h4>Description : {{ticket.description}}</h4>
+  <h4>Location : {{ticket.room}}</h4>
+  <h1 class="sub-header">Resolution Informations</h1>
+  <h4>Expected resolution : {{ticket.expectedDate}}</h4>
+  <h4>Is in progress ? : {{ticket.isInProgress}}</h4>
+  <h4>Current handler : {{ticket.handlerUsername}} - {{ticket.handler}}</h4>
+  <h4>Closed ticket ? : {{ticket.isValidated}}</h4>
+  <h1 class="sub-header" ng-show='user.admin'>Actions</h1>
+  <div class="UniqueTicketActions" ng-show='user.admin'>
+    <button class="btn btn-primary" ng-click='handleTicket()'>Handle this issue</button>
+    <button class="btn btn-success" ng-click='resolveTicket()'>Mark this issue as resolved</button>
+    <button class="btn btn-warning" ng-click='reOpenTicket()'>Re-Open this issue</button>
+    <button class="btn btn-danger" ng-click='deleteTicket()'>Delete this issue</button>
+  </div>
+</div>
+<h1 class="sub-header">Comments</h1>
+<div ng-repeat='comment in ticket.comments | orderBy: "-comment.date"' class="news">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h1 class="panel-title">{{comment.author}}</h1>
+    </div>
+    <div class="panel-body">
+      <p>{{comment.description}}</p>
+      <h6>{{comment.date | date : "medium"}}</h6>
+    </div>
+  </div>
+</div>
+<div class="commentPosting">
+<fieldset class="form-group">
+  <textarea class="form-control" rows="1" placeholder="Your comment" ng-model='commentForm.description'></textarea>
+</fieldset>
+<button type="submit" class="btn btn-primary" ng-click='addComment()'>Send your comment !</button>
+</div>

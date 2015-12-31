@@ -1,0 +1,50 @@
+<ng-include src="'templates/partials/navbar.html'"></ng-include>
+<ng-include src="'templates/partials/sidebar.html'"></ng-include>
+<div class="UniqueUser">
+  <h1 class="sub-header">User Data</h1>
+  <div class="col-md-3">
+    <img src="{{user.photo}}" class="img-responsive" alt="Generic placeholder thumbnail">
+  </div>
+  <div class="col-md-9">
+    <h2>ID : {{user._id}}</h2>
+    <h4>Username : {{user.username}}</h4>
+    <h4>Mail : {{user.mail}}</h4>
+    <h4>Name : {{user.firstName}} {{user.lastName}}</h4>
+    <h4>City : {{user.city}}</h4>
+    <h4>Admin : {{user.admin}}</h4>
+    <h4>Joined : {{user.createdAt | date : "medium"}}</h4>
+  </div>
+  <div class="col-md-12">
+    <h1 class="sub-header">User's Tickets</h1>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>ID</th>
+            <th>Level</th>
+            <th>In Progress ?</th>
+            <th>Handler</th>
+            <th>Validated ?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="ticket in tickets | orderBy: createdAt :true">
+            <td>{{ticket.createdAt | date : "medium"}}</td>
+            <td>{{ticket._id}}</td>
+            <td>{{ticket.level}}</td>
+            <td>{{ticket.isInProgress}}</td>
+            <td>{{ticket.handler}}</td>
+            <td>{{ticket.isValidated}}</td>
+            <td><button ng-click="seeTicket(ticket)" class="btn btn-primary">See this ticket</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h1 class="sub-header">Actions</h1>
+    <div class="UniqueUserActions">
+      <button ng-click="deleteUser(user)" class="btn btn-danger">Delete this account</button>
+    </div>
+  </div>
+</div>
+</div>

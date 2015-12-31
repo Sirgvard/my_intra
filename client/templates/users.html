@@ -1,0 +1,31 @@
+<ng-include src="'templates/partials/navbar.html'"></ng-include>
+<ng-include src="'templates/partials/sidebar.html'"></ng-include>
+<div class="allUsers col-md-12 ">
+  <h2 class="sub-header">All Users</h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Profile Picture</th>
+          <th>Username</th>
+          <th>Name</th>
+          <th>Mail</th>
+          <th>City</th>
+          <th>Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat='user in allUsers | orderBy: createdAt :false'>
+          <td><img src="{{user.photo}}" class="img-responsive img-circle" alt="Generic placeholder thumbnail"></td>
+          <td>{{user.username}}</td>
+          <td>{{user.firstName}} {{user.lastName}}</td>
+          <td>{{user.mail}}</td>
+          <td>{{user.city}}</td>
+          <td>{{user.country}}</td>
+          <td><button ng-click='seeUser(user._id)' class="btn btn-primary">See this User</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

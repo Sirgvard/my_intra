@@ -1,0 +1,151 @@
+
+body {
+  padding-top: 50px;
+}
+
+body a{
+  color: #FFF;
+}
+
+
+.sub-header {
+  background-color: #303030;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.navbar-fixed-top {
+  border: 0;
+}
+
+.navbar-inverse .navbar-collapse{
+    background-color: #303030;
+}
+
+.navbar-inverse {
+    background-color: #303030;
+    border-bottom: 1px solid #000;
+  }
+
+.navbar-header a{
+  font-size: 30px;
+  color: #9D9D9D;
+}
+
+.sidebar {
+  display: none;
+  text-align: center;
+  align-items: center;
+  color: #FFF;
+  font-size: 20px;
+}
+
+.sidebar .img-responsive{
+  display: inline;
+  border-radius: 50%;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  border:5px solid white;
+}
+
+@media (min-width: 300px) {
+  .sidebar {
+    position: fixed;
+    top: 45px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #303030;
+    border-right: 1px solid #000;
+  }
+}
+
+.nav-sidebar {
+  margin-right: -21px;
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+
+.nav-sidebar img{
+  width: 100px;
+  height: 100px;
+}
+
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+}
+
+.main {
+  padding: 20px;
+}
+
+@media (min-width: auto) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+.page-header{
+  color: #FFF;
+}
+
+.sub-header{
+  background-color: transparent;
+  color: #FFF;
+}
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.placeholders h4 {
+  margin-bottom: 0;
+  color: #FFF;
+}
+
+.placeholder .text-muted{
+  margin-top: 25px;
+  font-size: 40px;
+  color: #FFF;
+}
+
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+}
+
+thead th{
+  color: white;
+  text-align: center;
+}
+
+.table-striped>tbody>tr:nth-child(even)>td{
+  text-align: center;
+  background-color: #d3d3d3;
+  }
+.table-striped>tbody>tr:nth-child(odd)>td{
+  text-align: center;
+   background-color: #FFF;
+ }
+
+form {
+  color: white;
+}
+.issueParameters{
+  margin-top: 40px;
+  margin-bottom: 90px;
+}

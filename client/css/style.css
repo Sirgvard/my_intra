@@ -1,0 +1,214 @@
+body {
+  background: url(../images/wall.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin-left: 350px;
+}
+
+.adminPanel h2{
+  margin-top:100px;
+}
+
+.userPanel h2{
+  margin-top: 100px;
+}
+
+.home{
+  color: #FFF;
+  margin-top: 100px;
+}
+
+.home h1{
+  font-size: 124px;
+}
+
+.home h2{
+  margin-top: 40px;
+  font-size: 36px;
+}
+
+.home h4{
+  font-size: 24px;
+  margin-bottom: 75px;
+}
+
+.login {
+  color: #FFF;
+  margin-top: 100px;
+}
+
+.login h1{
+  font-size: 72px;
+}
+
+.login .form-group{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.register {
+  color: #FFF;
+  margin-top: 100px;
+}
+
+.register h1{
+  font-size: 72px;
+}
+
+.page404{
+  color: #FFF;
+  margin-top: 100px;
+}
+
+.page404 h1{
+  font-size: 124px;
+}
+
+.page404 h2{
+  font-size: 36px;
+}
+
+.UniqueTicket h1{
+  color: white;
+}
+.UniqueTicket h2{
+  color: white;
+}
+.UniqueTicket h3{
+  color: white;
+}
+.UniqueTicket h4{
+  color: white;
+}
+
+.UniqueTicketActions{
+  text-align: center;
+}
+
+.UniqueTicket .btn{
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.commentPosting{
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.commentPosting .btn{
+  display: inline;
+}
+
+.commentPosting .fieldset{
+  display: inline-block;
+}
+
+.UniqueUser h1{
+  color: white;
+}
+.UniqueUser h2{
+  color: white;
+}
+.UniqueUser h3{
+  color: white;
+}
+.UniqueUser h4{
+  color: white;
+}
+
+.UniqueUser .col-md-3 .img-responsive{
+  border-radius: 50%;
+  border: 5px solid #FFF;
+  width: 250px;
+  height: 250px;
+}
+
+.UniqueUser .col-md-9{
+  vertical-align: middle;
+}
+
+.UniqueUserActions{
+  text-align: center;
+}
+
+.allUsers .table td{
+  vertical-align: middle;
+  text-align: center;
+}
+
+.allUsers .table .img-responsive{
+  width: 75px;
+  height: 75px;
+  display: inline;
+  border: 5px solid #000;
+}
+
+.adminPanel .table td{
+  vertical-align: middle;
+  text-align: center;
+}
+
+.adminPanel .table .img-responsive{
+  width: 30px;
+  height: 30px;
+  display: inline;
+  border: 2px solid #000;
+}
+
+.adminPanel .serverForm{
+  display: inline-block;
+}
+
+.adminPanel .serverForm .form-control{
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.settings h1{
+  margin-top: 50px;
+}
+
+.settings form-group{
+  margin-top: 25px;
+}
+
+.settings input{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 450px;
+}
+
+.news .panel-primary{
+  border-color: #000;
+}
+
+.news .panel-heading{
+  background-color: #b0b0b0 !important;
+  border-color: #000;
+}
+
+.news h1{
+  display: inline-block;
+  color: #000;
+}
+
+.news h6{
+  display: inline-block;
+}
+
+.news .panel-footer{
+  text-align: right;
+}
+
+.btn-danger{
+  background-color: #800000;
+  border-color: #cc0000;
+}
+
+select{
+  width: 100%;
+  height: 40px;
+  color: #000;
+}

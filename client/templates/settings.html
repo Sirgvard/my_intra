@@ -1,0 +1,30 @@
+<ng-include src="'templates/partials/navbar.html'"></ng-include>
+<ng-include src="'templates/partials/sidebar.html'"></ng-include>
+<div class="settings">
+  <h1 class="sub-header">Update My Profile</h1>
+  <div class="form-group">
+    <input type="text" placeholder="New Username" class="form-control"  ng-model="settingsForm.newUsername"  required>
+  </div>
+  <div class="form-group">
+    <input type="text" placeholder="New e-Mail Address" class="form-control"  ng-model="settingsForm.newMail"  required>
+  </div>
+  <div class="form-group">
+    <input type="text" placeholder="New Last Name" class="form-control"  ng-model="settingsForm.newLastName"  required>
+    <input type="text" placeholder="New First Name" class="form-control"  ng-model="settingsForm.newFirstName"  required>
+  </div>
+  <div class="form-group">
+    <input type="text" placeholder="New Profil Pic URL" class="form-control"  ng-model="settingsForm.newPhoto"  required>
+  </div>
+  <button class="btn btn-success" ng-click='updateProfile(user)'>Update my profile</button>
+  <h1 class="sub-header">Change My Password</h1>
+  <div class="form-group">
+    <input type="password" placeholder="Current Password" class="form-control"  ng-model="settingsForm.oldPassword"  required>
+    <input type="password" placeholder="New Password" class="form-control"  ng-model="settingsForm.newPassword"  required>
+    <input type="password" placeholder="New Password Confirmation" class="form-control"  ng-model="settingsForm.newPasswordConfirmation"  required>
+    <button class="btn btn-primary" ng-click='updatePassword(user)' >Change my password</button>
+  </div>
+  <h1 class="sub-header">Delete Your Account</h1>
+  <h4 class="sub-header">This account will be permantly deleted.</h4>
+  <input type="password" placeholder="Enter your current password to delete your account" class="form-control"  ng-model="settingsForm.deleteConfirmation"  required>
+  <button class="btn btn-danger" ng-click='deleteAccount(user)'>Delete my account</button>
+</div>

@@ -1,0 +1,25 @@
+{
+  "name": "my_intraBocal",
+  "description": "Web interface to report issues",
+  "main": "app.js",
+  "authors": [
+    "Sirgvard"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "bootstrap": "~3.3.6",
+    "angular-ui-router": "~0.2.15",
+    "angular-bootstrap": "~0.14.3",
+    "angular-animate": "~1.4.8"
+  }
+}

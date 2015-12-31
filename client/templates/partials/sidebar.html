@@ -1,0 +1,10 @@
+<div class="col-md-2 sidebar" ng-controller="personnalCtrl">
+  <ul class="nav nav-sidebar">
+    <li ng-show="user.admin">ADMIN ACCOUNT<img src="../../images/admin.jpg" class="img-responsive" alt="Generic placeholder thumbnail" height="75" width="75"></li>
+    <img src="{{user.photo}}" class="img-responsive" alt="Generic placeholder thumbnail" height="200" width="200">
+    <li>{{user.firstName}} {{user.lastName}}</li>
+    <li>{{user.username}}</li>
+    <li>{{user.mail}}</li>
+    <li>{{user.city}}</li>
+  </ul>
+</div>
